@@ -245,7 +245,7 @@ header {
     padding: 16px 0;
     font-size: 40px;
   }
-  .menu-nav li::after a {
+  .menu-nav li a::after {
     display: none;
   }
   .contacts {
