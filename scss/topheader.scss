@@ -4,7 +4,6 @@
 
 header {
   @include flex(row, center, center);
-  border-bottom: red 1px solid
 }
 
 .header-left {
@@ -55,7 +54,7 @@ header {
   }
 
   ~.burger-wrapper>.burger>div:nth-child(3) {
-    transform: translate(0, -7px) rotate(-45deg);
+    transform: translate(0, -6px) rotate(-45deg);
   }
 
   ~.burger-content {
@@ -72,7 +71,7 @@ header {
 
   div {
     width: 24px;
-    height: 2.67px;
+    height: 3px;
     background-color: $header-black;
     transition: transform 0.5s ease, opacity 0.5s ease, background-color 0.5s ease;
   }
@@ -81,15 +80,15 @@ header {
 .site-name {
   text-decoration: none;
   @include flex;
-  padding: 24.75px 0;
+  padding: 25px 0;
 
   span {
     word-spacing: 0;
     display: block;
     font-size: 26px;
     font-weight: 700;
-    font-family: "Raleway";
-    line-height: 30.52px;
+    font-family: "Raleway", sans-serif;
+
     letter-spacing: 0.03em;
     text-align: left;
     color: $header-black;
@@ -106,20 +105,20 @@ header {
   padding-left: 50px;
   height: 100%;
 
-  li {
+  li a {
     @include flex(column-reverse, center, center);
     color: $header-black;
     margin-left: 50px;
-    font-family: "Roboto";
+    font-family: "Roboto", sans-serif;
     font-weight: 500;
     font-size: 14px;
-    line-height: 16.41px;
+
     letter-spacing: 0.02em;
     transition: color 0.5s ease;
     cursor: pointer;
   }
 
-  li::after {
+  li a::after {
     content: '';
     position: relative;
     top: 47px;
@@ -132,11 +131,11 @@ header {
     transition: max-width 0.5s ease;
   }
 
-  li:hover {
+  li:hover a {
     color: $blue;
   }
 
-  li:hover::after {
+  li a:hover::after {
     max-width: 100px;
   }
 }
@@ -158,10 +157,10 @@ header {
     }
 
     span {
-      font-family: "Roboto";
+      font-family: "Roboto", sans-serif;
       font-weight: 500;
       font-size: 14px;
-      line-height: 16.41px;
+
       letter-spacing: 0.02em;
     }
 
@@ -209,7 +208,7 @@ header {
     width: 100%;
     height: 100%;
     top: 0;
-    left: -751px;
+    left: -799px;
     background-color: white;
     transition: left 0.5s ease;
     padding-left: 48px;
@@ -220,7 +219,7 @@ header {
 
     span {
       font-size: 24px;
-      line-height: 28.18px;
+
     }
   }
 
@@ -242,14 +241,14 @@ header {
     align-items: flex-start;
     height: auto;
 
-    li {
+    li a {
       margin-left: 0;
       padding: 16px 0;
       font-size: 40px;
-      line-height: 46.88px;
+
     }
 
-    li::after {
+    li::after a {
       display: none;
     }
   }
@@ -268,7 +267,6 @@ header {
 
     span {
       font-size: 24px;
-      line-height: 28.13px;
     }
   }
 
@@ -277,7 +275,7 @@ header {
 
     span {
       font-size: 34px;
-      line-height: 39.84px;
+
       color: $blue;
     }
   }
@@ -286,18 +284,23 @@ header {
     padding-bottom: 36px;
     display: block;
 
+    >ul:last-child {
+      margin-right: 48px;
+    }
+
     >ul {
-      @include flex(row, center, center);
+      @include flex(row, center, flex-start);
+      flex-wrap: wrap;
       list-style: none;
 
       >li {
         display: flex;
 
         >a {
-          font-family: "Roboto";
+          font-family: "Roboto", sans-serif;
           font-weight: 500;
           font-size: 18px;
-          line-height: 22px;
+          line-height: 1.2;
           letter-spacing: 0.02em;
           text-decoration: none;
           color: $blue;
@@ -313,5 +316,11 @@ header {
         height: 21px;
       }
     }
+  }
+}
+
+@include adaptive(350px) {
+  .contacts>li:last-child span {
+    font-size: 30px;
   }
 }
