@@ -1,0 +1,53 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+.features {
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 93px;
+  display: grid;
+  grid-template-columns: repeat(4, 0.25fr);
+}
+.features__item {
+  padding: 0 14px;
+}
+.features__svg {
+  background-color: #F5F4FA;
+  height: 120px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+}
+.features__label {
+  font-family: "Roboto";
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 14.5px;
+  margin-top: 31px;
+  margin-left: 1px;
+  letter-spacing: 0.1px;
+}
+.features__desc {
+  font-family: "Roboto";
+  font-size: 14.9px;
+  margin-top: 9px;
+  line-height: 1.6;
+}
+
+@media screen and (max-width: 830px) {
+  .features {
+    margin-top: 59px;
+    grid-template-columns: repeat(2, 0.5fr);
+    row-gap: 30px;
+  }
+}
+@media screen and (max-width: 570px) {
+  .features {
+    grid-template-columns: 1fr;
+    row-gap: 31.5px;
+  }
+  .features__label {
+    text-align: center;
+  }
+}
