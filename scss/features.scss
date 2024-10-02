@@ -9,7 +9,7 @@
   display: grid;
   grid-template-columns: repeat(4, 0.25fr);
   margin-bottom: 63px;
-  
+
 
   &__item {
     padding: 0 14px;
@@ -23,7 +23,6 @@
   }
 
   &__label {
-    font-family: "Roboto";
     text-transform: uppercase;
     font-weight: 600;
     font-size: 14.5px;
@@ -33,10 +32,10 @@
   }
 
   &__desc {
-    font-family: "Roboto";
     font-size: 14.9px;
     margin-top: 9px;
     line-height: 1.6;
+    color: $gray;
   }
 }
 

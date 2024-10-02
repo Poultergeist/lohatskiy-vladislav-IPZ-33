@@ -6,7 +6,6 @@
 }
 .what__label {
   text-align: center;
-  font-family: "Roboto";
   font-size: 37.8px;
   font-weight: 600;
 }
@@ -33,7 +32,6 @@
   width: 100%;
   background-color: rgba(47, 48, 58, 0.8);
   color: white;
-  font-family: "Roboto";
   text-transform: uppercase;
   padding: 26.5px 0;
   text-align: center;
