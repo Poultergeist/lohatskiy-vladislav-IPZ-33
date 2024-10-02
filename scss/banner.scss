@@ -1,0 +1,77 @@
+@import "mixin";
+@import "colors";
+@import "important";
+
+#banner {
+  @include flex(row, center, center);
+  max-height: 600px;
+  height: min-content;
+  min-height: 400px;
+  width: 100%;
+  overflow: hidden;
+  background-color: $C4;
+  position: relative;
+}
+
+#banner-back {
+  width: 100%;
+  opacity: 0.6;
+}
+
+#banner-front {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  @include flex(column, center, center);
+
+  span {
+    color: white;
+    font-family: 'Roboto';
+    font-weight: 900;
+    font-size: 44px;
+    line-height: 60px;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 0.5px;
+    letter-spacing: 2.7px;
+  }
+
+  button {
+    color: white;
+    border: none;
+    background-color: $blue;
+    font-family: 'Roboto';
+    padding: 16px 24px;
+    margin-top: 29px;
+    border-radius: 5px;
+    letter-spacing: 0.9px;
+    font-weight: 500;
+    font-size: 16px;
+  }
+}
+
+@include adaptive(922px){
+  #banner-back {
+    width: 100%;
+    height: auto;
+  }
+
+  #banner {
+    height: 400px;
+  }
+
+  #banner-front {
+    span {
+      font-size: 24.1px;
+      line-height: 42px;
+      margin-top: 2px;
+    }
+  }
+}
+
+@include adaptive(622px) {
+  #banner-back {
+    width: auto;
+    height: 100%;
+  }
+}

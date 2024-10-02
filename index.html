@@ -4,9 +4,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>LNTU layout</title>
   <link rel="stylesheet" href="css/basic.css">
   <link rel="stylesheet" href="css/topheader.css">
+  <link rel="stylesheet" href="css/banner.css">
 </head>
 
 <body>
@@ -30,9 +31,9 @@
           </label>
           <div class="burger-content">
             <ul class="menu-nav">
-              <li><a href="#">Студія</a></li>
-              <li><a href="#">Портфоліо</a></li>
-              <li><a href="#">Контакти</a></li>
+              <li><a href="#"><span>Студія</span></a></li>
+              <li><a href="#"><span>Портфоліо</span></a></li>
+              <li><a href="#"><span>Контакти</span></a></li>
             </ul>
             <ul class="contacts">
               <li class="social-burger">
@@ -44,7 +45,9 @@
                 </ul>
               </li>
               <li>
-                <img src="img/icons/envelope.svg" alt="envelope">
+                <svg width="16" height="12" viewBox="0 0 16 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M14.5 0H1.50001C0.672854 0 0 0.672853 0 1.50001V10.5C0 11.3271 0.672854 12 1.50001 12H14.5C15.3271 12 16 11.3271 16 10.5V1.50001C16 0.672853 15.3271 0 14.5 0ZM14.5 0.999994C14.5679 0.999994 14.6325 1.01409 14.6916 1.0387L8 6.83838L1.30833 1.0387C1.36742 1.01412 1.43204 0.999994 1.49998 0.999994H14.5ZM14.5 11H1.50001C1.22414 11 0.999996 10.7759 0.999996 10.5V2.09521L7.67236 7.87792C7.76661 7.95944 7.8833 7.99999 8 7.99999C8.1167 7.99999 8.23339 7.95948 8.32764 7.87792L15 2.09521V10.5C15 10.7759 14.7759 11 14.5 11Z" fill="currentColor"/>
+                  </svg>                  
                 <a href="mailto:info@devstudio.com">
                   <span>
                     info@devstudio.com
@@ -52,7 +55,10 @@
                 </a>
               </li>
               <li>
-                <img src="img/icons/phone.svg" alt="phone">
+                <svg width="10" height="16" viewBox="0 0 10 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8.5 0H1.5C0.672848 0 0 0.672848 0 1.5V14.5C0 15.3272 0.672848 16 1.5 16H8.5C9.32715 16 10 15.3272 10 14.5V1.5C10 0.672848 9.32715 0 8.5 0ZM1.5 1H8.5C8.77588 1 9 1.22412 9 1.5V12H1V1.5C1 1.22412 1.22412 1 1.5 1ZM8.5 15H1.5C1.22412 15 1 14.7759 1 14.5V13H9V14.5C9 14.7759 8.77588 15 8.5 15Z"/>
+                  <path d="M2.35355 13.7388C2.54882 13.921 2.54882 14.2166 2.35355 14.3988C2.15828 14.5811 1.84172 14.5811 1.64645 14.3988C1.45118 14.2166 1.45118 13.921 1.64645 13.7388C1.84172 13.5565 2.15828 13.5565 2.35355 13.7388Z"/>
+                  </svg>                  
                 <a href="tel:+380961111111">
                   <span>
                     +38 096 111 11 11
@@ -65,6 +71,17 @@
       </div>
     </div>
   </header>
+  <div id="banner">
+    <img src="img/banner.jpg" alt="" id="banner-back">
+    <div id="banner-front">
+      <span class="banner-text">
+        Ефективні рішення для</br>&VeryThinSpace;вашого бізнесу
+      </span>
+      <button>Замовити послугу</button>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="js/app.js"></script>
 </body>
 
 </html>

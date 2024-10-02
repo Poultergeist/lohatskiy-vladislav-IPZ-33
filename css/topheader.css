@@ -45,6 +45,7 @@ header {
 .burger-wrapper {
   display: none;
   cursor: pointer;
+  z-index: 3;
 }
 
 .burger:hover div {
@@ -110,27 +111,34 @@ header {
   align-items: center;
   justify-content: space-evenly;
   list-style: none;
-  padding-left: 50px;
+  padding-left: 42px;
   height: 100%;
 }
-.menu-nav li a {
+.menu-nav li:nth-child(2) a span {
+  margin-left: 53px;
+}
+.menu-nav li:nth-child(3) a span {
+  margin-left: 50px;
+}
+.menu-nav li a span {
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
   justify-content: center;
   color: #212121;
-  margin-left: 50px;
+  margin-left: 51px;
   font-family: "Roboto", sans-serif;
   font-weight: 500;
   font-size: 14px;
+  position: relative;
   letter-spacing: 0.02em;
   transition: color 0.5s ease;
   cursor: pointer;
 }
-.menu-nav li a::after {
+.menu-nav li a span::after {
   content: "";
-  position: relative;
-  top: 47px;
+  position: absolute;
+  top: 45px;
   display: block;
   width: 100%;
   max-width: 0;
@@ -142,7 +150,7 @@ header {
 .menu-nav li:hover a {
   color: #2196F3;
 }
-.menu-nav li a:hover::after {
+.menu-nav li a span:hover::after {
   max-width: 100px;
 }
 
@@ -157,10 +165,11 @@ header {
 .contacts li {
   cursor: pointer;
 }
-.contacts li img {
+.contacts li svg {
   position: relative;
-  top: 2px;
-  transition: filter 0.5s linear;
+  transition: color 0.5s linear;
+  color: #757575;
+  margin-right: 10px;
 }
 .contacts li span {
   font-family: "Roboto", sans-serif;
@@ -172,14 +181,20 @@ header {
   transition: color 0.5s ease;
   color: #757575;
 }
+.contacts > :not(:first-child) {
+  display: flex;
+}
+.contacts > :nth-child(2) > svg {
+  margin-top: 3px;
+}
 .contacts > :last-child {
   margin-left: 40px;
 }
 .contacts > :last-child img {
-  top: 3px;
+  top: 2px;
 }
-.contacts li:hover img {
-  filter: sepia(98%) saturate(1255%) hue-rotate(184deg) brightness(97%) contrast(97%);
+.contacts li:hover svg {
+  color: #2196F3;
 }
 .contacts li:hover a {
   color: #2196F3;
@@ -193,9 +208,24 @@ header {
     justify-content: center;
     padding-left: 40px;
   }
+  .contacts li svg {
+    width: 13.5px !important;
+  }
+  .contacts li span {
+    font-size: 12px;
+  }
   .contacts > :last-child {
     margin-left: 0;
     margin-top: 5px;
+  }
+  .site-name {
+    padding: 25.5px 0;
+  }
+  .site-name > span {
+    font-size: 24.1px;
+  }
+  .menu-nav {
+    padding-left: 35px;
   }
 }
 @media screen and (max-width: 751px) {
@@ -212,6 +242,7 @@ header {
     background-color: white;
     transition: left 0.5s ease;
     padding-left: 48px;
+    z-index: 2;
   }
   .site-name {
     padding: 16px 0;

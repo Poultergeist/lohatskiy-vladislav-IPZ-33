@@ -32,6 +32,7 @@ header {
 .burger-wrapper {
   display: none;
   cursor: pointer;
+  z-index: 3;
 }
 
 .burger:hover {
@@ -102,26 +103,36 @@ header {
 .menu-nav {
   @include flex(row, center, space-evenly);
   list-style: none;
-  padding-left: 50px;
+  padding-left: 42px;
   height: 100%;
 
-  li a {
+  li {
+    &:nth-child(2) a span {
+      margin-left: 53px;
+    }
+
+    &:nth-child(3) a span {
+      margin-left: 50px;
+    }
+  }
+
+  li a span {
     @include flex(column-reverse, center, center);
     color: $header-black;
-    margin-left: 50px;
+    margin-left: 51px;
     font-family: "Roboto", sans-serif;
     font-weight: 500;
     font-size: 14px;
-
+    position: relative;
     letter-spacing: 0.02em;
     transition: color 0.5s ease;
     cursor: pointer;
   }
 
-  li a::after {
+  li a span::after {
     content: '';
-    position: relative;
-    top: 47px;
+    position: absolute;
+    top: 45px;
     display: block;
     width: 100%;
     max-width: 0;
@@ -135,7 +146,7 @@ header {
     color: $blue;
   }
 
-  li a:hover::after {
+  li a span:hover::after {
     max-width: 100px;
   }
 }
@@ -149,38 +160,46 @@ header {
 
   li {
     cursor: pointer;
-
-    img {
+    
+    svg {
       position: relative;
-      top: 2px;
-      transition: filter 0.5s linear;
+      transition: color 0.5s linear;
+      color: $gray;
+      margin-right: 10px;
     }
-
+    
     span {
       font-family: "Roboto", sans-serif;
       font-weight: 500;
       font-size: 14px;
-
       letter-spacing: 0.02em;
     }
-
+    
     a {
       transition: color 0.5s ease;
       color: $gray;
     }
   }
 
+  &>:not(:first-child) {
+    display: flex;
+  }
+
+  &>:nth-child(2)>svg {
+    margin-top: 3px;
+  }
+  
   >:last-child {
     margin-left: 40px;
 
     img {
-      top: 3px;
+      top: 2px;
     }
   }
 
   li:hover {
-    img {
-      filter: sepia(98%) saturate(1255%) hue-rotate(184deg) brightness(97%) contrast(97%);
+    svg {
+      color: $blue;
     }
 
     a {
@@ -194,10 +213,31 @@ header {
     @include flex(column, flex-start, center);
     padding-left: 40px;
 
+    li {
+      svg {
+        width: 13.5px !important;
+      }
+      span {
+        font-size: 12px;
+      }
+    }
+
     >:last-child {
       margin-left: 0;
       margin-top: 5px;
     }
+  }
+
+  .site-name {
+    padding: 25.5px 0;
+
+    &>span {
+      font-size: 24.1px;
+    }
+  }
+
+  .menu-nav {
+    padding-left: 35px;
   }
 }
 
@@ -212,6 +252,7 @@ header {
     background-color: white;
     transition: left 0.5s ease;
     padding-left: 48px;
+    z-index: 2;
   }
 
   .site-name {
