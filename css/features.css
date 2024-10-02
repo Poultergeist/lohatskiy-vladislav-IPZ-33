@@ -6,6 +6,7 @@
   margin-top: 93px;
   display: grid;
   grid-template-columns: repeat(4, 0.25fr);
+  margin-bottom: 63px;
 }
 .features__item {
   padding: 0 14px;
