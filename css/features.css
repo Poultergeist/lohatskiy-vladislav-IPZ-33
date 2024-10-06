@@ -20,6 +20,10 @@
   justify-content: center;
   border-radius: 5px;
 }
+.features__svg svg {
+  height: 70px;
+  width: 100%;
+}
 .features__label {
   text-transform: uppercase;
   font-weight: 600;

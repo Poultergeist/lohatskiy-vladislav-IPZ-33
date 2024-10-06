@@ -20,6 +20,11 @@
     height: 120px;
     @include flex(row, center, center);
     border-radius: 5px;
+
+    svg {
+      height: 70px;
+      width: 100%;
+    }
   }
 
   &__label {

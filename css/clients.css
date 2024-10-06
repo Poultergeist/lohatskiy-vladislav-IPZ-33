@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+.clients__label {
+  text-align: center;
+  font-size: 37px;
+  font-weight: 600;
+  margin-top: 93px;
+  letter-spacing: 0.6px;
+  margin-left: 3px;
+}
+.clients .container {
+  width: auto;
+}
+.clients__container {
+  margin-top: 50px;
+  margin-bottom: 93px;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  justify-items: center;
+  -moz-column-gap: 30px;
+       column-gap: 30px;
+}
+.clients__client {
+  border: 1px solid #AFB1B8;
+  border-radius: 5px;
+  transition: border 0.3s ease;
+  width: 100%;
+}
+.clients__client a, .clients__client svg {
+  display: block;
+  width: 106px;
+  height: 91px;
+  text-decoration: none;
+  color: #AFB1B8;
+  transition: color 0.3s ease;
+}
+.clients__client a {
+  margin: 0 auto;
+}
+.clients__client:nth-child(4) svg {
+  transform: translate(10px, 8px);
+}
+.clients__client:hover {
+  border-color: #2196F3;
+}
+.clients__client:hover svg {
+  color: #2196F3;
+}
+
+@media screen and (max-width: 930px) {
+  .clients__container {
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 28px;
+    margin-bottom: 59px;
+    row-gap: 30px;
+  }
+  .clients__label {
+    font-size: 28.2px;
+    margin-top: 61px;
+  }
+}
+@media screen and (max-width: 540px) {
+  .clients__container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
