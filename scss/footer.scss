@@ -1,0 +1,242 @@
+@import "mixin";
+@import "colors";
+@import "important";
+
+.footer {
+  background-color: #2F303A;
+
+  .container {
+    display: flex;
+    width: auto;
+    padding: 61.5px 15px;
+  }
+
+  &__logo {
+    padding-bottom: 16px;
+
+    a {
+      display: flex;
+      text-decoration: none;
+      font-size: 26px;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+
+    span {
+      display: block;
+      font-family: "Raleway", sans-serif;
+    }
+
+    span:first-child {
+      color: $blue;
+    }
+
+    span:last-child {
+      color: white;
+    }
+  }
+
+  &__contact>div:not(:first-child) {
+    padding-top: 10px;
+
+    a {
+      text-wrap: nowrap;
+      color: #FFFFFF99;
+      font-size: 15px;
+    }
+
+    &:nth-child(2) {
+      a {
+        color: white;
+      }
+    }
+  }
+
+  &__social {
+    padding-left: 92.7px;
+    padding-top: 11px;
+
+    &-label {
+      color: white;
+      text-transform: uppercase;
+      font-size: 14.5px;
+      letter-spacing: 0.1px;
+    }
+
+    &-links {
+      display: flex;
+      padding-top: 19px;
+
+      a {
+        width: 44px;
+        height: 44px;
+        margin-right: 10px;
+        @include flex(row, center, center);
+        background-color: #FFFFFF1A;
+        border-radius: 50%;
+        transition: background-color 0.3s ease;
+
+        svg {
+          width: 20px;
+          height: 20px;
+          color: white;
+        }
+
+        &:hover {
+          background-color: $blue;
+        }
+      }
+    }
+  }
+
+  &__spam {
+    flex: 1;
+    min-width: 544px;
+  }
+
+  &__form {
+    padding-left: 84.2px;
+    padding-top: 11px;
+
+    &-label {
+      color: white;
+      font-size: 14.5px;
+      text-transform: uppercase;
+      letter-spacing: 0.15px;
+      padding-bottom: 19px;
+    }
+
+    &-email {
+      height: 48px;
+      background: none;
+      border-radius: 2px;
+      float: left;
+      width: 57.3%;
+      border: 1px solid #FFFFFF4D;
+      font-size: 17px;
+      padding: 0 15px;
+    }
+
+    &-submit {
+      float: right;
+      width: 35%;
+      height: 50px;
+      @include flex(row, center, center);
+      color: white;
+      border: none;
+      border-radius: 5px;
+      background-color: $blue;
+      cursor: pointer;
+
+      span {
+        font-size: 16px;
+        font-weight: 600;
+        letter-spacing: 1px;
+      }
+
+      svg {
+        height: 27px;
+        width: 25px;
+        padding-left: 2px;
+        transform: translateX(7px);
+      }
+    }
+  }
+}
+
+@include adaptive(1090px) {
+  .footer {
+    .container {
+      flex-wrap: wrap;
+
+      &> :not(:last-child) {
+        flex: 0.5;
+      }
+    }
+
+    &__logo {
+      a {
+        font-size: 24px;
+      }
+    }
+
+    &__contact {
+      * {
+        text-align: center;
+        justify-content: center;
+      }
+
+      &>div:not(:first-child) {
+        padding-top: 9px;
+      }
+    }
+
+    &__social {
+      padding-left: 30px;
+      padding-top: 5px;
+
+      &-label {
+        text-align: center;
+      }
+
+      &-links {
+        justify-content: center;
+        padding-left: 10px;
+      }
+    }
+
+    &__form {
+      text-align: center;
+      padding: 0;
+      padding-top: 60px;
+      @include flex(column, center, center);
+
+      &-email {
+        width: 57%;
+      }
+
+      &-submit {
+        margin-top: 20px;
+        width: 27%;
+        min-width: 160px;
+
+        svg {
+          padding-left: 6px;
+          transform: translateX(3px);
+        }
+      }
+    }
+  }
+}
+
+@include adaptive(580px) {
+  .footer {
+    
+    .container {
+      flex-direction: column;
+      
+      &>* {
+        width: 100%;
+        flex: 1 !important;
+        padding: 0;
+      }
+    }
+    &__spam {
+      min-width: auto;
+    }
+
+    &__social {
+      padding-top: 60px !important;
+    }
+
+    &__form {
+      &-email {
+        width: 93%;
+      }
+
+      &-submit {
+        width: 44%;
+      }
+    }
+  }
+}

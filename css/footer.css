@@ -1,0 +1,198 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+.footer {
+  background-color: #2F303A;
+}
+.footer .container {
+  display: flex;
+  width: auto;
+  padding: 61.5px 15px;
+}
+.footer__logo {
+  padding-bottom: 16px;
+}
+.footer__logo a {
+  display: flex;
+  text-decoration: none;
+  font-size: 26px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+.footer__logo span {
+  display: block;
+  font-family: "Raleway", sans-serif;
+}
+.footer__logo span:first-child {
+  color: #2196F3;
+}
+.footer__logo span:last-child {
+  color: white;
+}
+.footer__contact > div:not(:first-child) {
+  padding-top: 10px;
+}
+.footer__contact > div:not(:first-child) a {
+  text-wrap: nowrap;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 15px;
+}
+.footer__contact > div:not(:first-child):nth-child(2) a {
+  color: white;
+}
+.footer__social {
+  padding-left: 92.7px;
+  padding-top: 11px;
+}
+.footer__social-label {
+  color: white;
+  text-transform: uppercase;
+  font-size: 14.5px;
+  letter-spacing: 0.1px;
+}
+.footer__social-links {
+  display: flex;
+  padding-top: 19px;
+}
+.footer__social-links a {
+  width: 44px;
+  height: 44px;
+  margin-right: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.1019607843);
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+.footer__social-links a svg {
+  width: 20px;
+  height: 20px;
+  color: white;
+}
+.footer__social-links a:hover {
+  background-color: #2196F3;
+}
+.footer__spam {
+  flex: 1;
+  min-width: 544px;
+}
+.footer__form {
+  padding-left: 84.2px;
+  padding-top: 11px;
+}
+.footer__form-label {
+  color: white;
+  font-size: 14.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.15px;
+  padding-bottom: 19px;
+}
+.footer__form-email {
+  height: 48px;
+  background: none;
+  border-radius: 2px;
+  float: left;
+  width: 57.3%;
+  border: 1px solid rgba(255, 255, 255, 0.3019607843);
+  font-size: 17px;
+  padding: 0 15px;
+}
+.footer__form-submit {
+  float: right;
+  width: 35%;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  background-color: #2196F3;
+  cursor: pointer;
+}
+.footer__form-submit span {
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+.footer__form-submit svg {
+  height: 27px;
+  width: 25px;
+  padding-left: 2px;
+  transform: translateX(7px);
+}
+
+@media screen and (max-width: 1090px) {
+  .footer .container {
+    flex-wrap: wrap;
+  }
+  .footer .container > :not(:last-child) {
+    flex: 0.5;
+  }
+  .footer__logo a {
+    font-size: 24px;
+  }
+  .footer__contact * {
+    text-align: center;
+    justify-content: center;
+  }
+  .footer__contact > div:not(:first-child) {
+    padding-top: 9px;
+  }
+  .footer__social {
+    padding-left: 30px;
+    padding-top: 5px;
+  }
+  .footer__social-label {
+    text-align: center;
+  }
+  .footer__social-links {
+    justify-content: center;
+    padding-left: 10px;
+  }
+  .footer__form {
+    text-align: center;
+    padding: 0;
+    padding-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .footer__form-email {
+    width: 57%;
+  }
+  .footer__form-submit {
+    margin-top: 20px;
+    width: 27%;
+    min-width: 160px;
+  }
+  .footer__form-submit svg {
+    padding-left: 6px;
+    transform: translateX(3px);
+  }
+}
+@media screen and (max-width: 580px) {
+  .footer .container {
+    flex-direction: column;
+  }
+  .footer .container > * {
+    width: 100%;
+    flex: 1 !important;
+    padding: 0;
+  }
+  .footer__spam {
+    min-width: auto;
+  }
+  .footer__social {
+    padding-top: 60px !important;
+  }
+  .footer__form-email {
+    width: 93%;
+  }
+  .footer__form-submit {
+    width: 44%;
+  }
+}

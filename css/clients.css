@@ -37,9 +37,6 @@
 .clients__client a {
   margin: 0 auto;
 }
-.clients__client:nth-child(4) svg {
-  transform: translate(10px, 8px);
-}
 .clients__client:hover {
   border-color: #2196F3;
 }
