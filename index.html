@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="css/team.css">
   <link rel="stylesheet" href="css/clients.css">
   <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/modal.css">
 </head>
 
 <body>
@@ -20,7 +21,7 @@
     <div class="container">
       <div class="header-wrapper">
         <div class="header-left">
-          <a href="#" class="site-name">
+          <a href="index.html" class="site-name">
             <span>Web</span>
             <span>Studio</span>
           </a>
@@ -36,8 +37,8 @@
           </label>
           <div class="burger-content">
             <ul class="menu-nav">
-              <li><a href="#"><span>Студія</span></a></li>
-              <li><a href="#"><span>Портфоліо</span></a></li>
+              <li><a href="index.html"><span>Студія</span></a></li>
+              <li><a href="portfolio.html"><span>Портфоліо</span></a></li>
               <li><a href="#"><span>Контакти</span></a></li>
             </ul>
             <ul class="contacts">
@@ -81,7 +82,7 @@
       <span class="banner-text">
         Ефективні рішення для</br>&VeryThinSpace;вашого бізнесу
       </span>
-      <button>Замовити послугу</button>
+      <button id="open-modal">Замовити послугу</button>
     </div>
   </div>
   <div class="features">
@@ -330,7 +331,7 @@
     <div class="container">
       <div class="footer__contact">
         <div class="footer__logo">
-          <a href="#">
+          <a href="index.html">
             <span>Web</span>
             <span>Studio</span>
           </a>
@@ -380,6 +381,74 @@
       </div>
     </div>
   </footer>
+  <div class="modal" id="modal">
+    <div class="modal__container">
+      <div class="modal__close">
+        <div class="modal__close-btn" id="close-modal">
+          <svg fill="currentColor">
+            <use href="./img/icons/icons.svg#icon-close"></use>
+          </svg>
+        </div>
+      </div>
+      <form class="modal__form">
+        <div class="modal__form-label">Залиште свої дані, ми вам передзвонимо</div>
+        <div class="modal__form_input-name">
+          <div class="modal__form_input-label">Ім'я</div>
+          <div class="modal__form_input-input">
+            <input type="text">
+            <svg>
+              <use href="./img/icons/icons.svg#icon-person-mod" fill="currentColor"></use>
+            </svg>
+            <div></div>
+          </div>
+        </div>
+        <div class="modal__form_input-phone">
+          <div class="modal__form_input-label">Телефон</div>
+          <div class="modal__form_input-input">
+            <input type="text">
+            <svg>
+              <use href="./img/icons/icons.svg#icon-phone-mod" fill="currentColor"></use>
+            </svg>
+            <div></div>
+          </div>
+        </div>
+        <div class="modal__form_input-mail">
+          <div class="modal__form_input-label">Пошта</div>
+          <div class="modal__form_input-input">
+            <input type="text">
+            <svg>
+              <use href="./img/icons/icons.svg#icon-mail-mod" fill="currentColor"></use>
+            </svg>
+            <div></div>
+          </div>
+        </div>
+        <div class="modal__form_input-comment">
+          <div class="modal__form_input-label">Коментар</div>
+          <div class="modal__form_input-input">
+            <textarea type="text" placeholder="Введіть текст"></textarea>
+            <div></div>
+          </div>
+        </div>
+        <div class="modal__form-terms">
+          <button id="terms">
+            <svg fill="white">
+              <use href="./img/icons/icons.svg#icon-check"></use>
+            </svg>
+          </button>
+          <label for="terms">
+            Погоджуюся з розсилкою та приймаю <a
+              href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Умови договору</a>
+          </label>
+        </div>
+        <div class="modal__form-send">
+          <button class="modal__form-button">
+            Відправити
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
   <script src="js/app.js"></script>
 </body>
 

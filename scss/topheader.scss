@@ -4,6 +4,7 @@
 
 header {
   @include flex(row, center, center);
+  border: 1px solid #ECECEC;
 }
 
 .header-left {
@@ -251,7 +252,7 @@ header {
     left: -799px;
     background-color: white;
     transition: left 0.5s ease;
-    padding-left: 48px;
+    padding-left: 40px;
     z-index: 2;
   }
 
@@ -282,9 +283,9 @@ header {
     align-items: flex-start;
     height: auto;
 
-    li a {
-      margin-left: 0;
-      padding: 16px 0;
+    li a span{
+      margin-left: 0 !important;
+      padding: 16.5px 0;
       font-size: 40px;
 
     }
@@ -297,6 +298,10 @@ header {
   .contacts {
     flex-direction: column-reverse;
     padding-left: 0;
+    
+    svg {
+      display: none;
+    }
 
     img {
       display: none;
@@ -304,7 +309,7 @@ header {
   }
 
   .contacts>li:nth-child(2) {
-    margin-bottom: 64px;
+    margin-bottom: 62px;
 
     span {
       font-size: 24px;
@@ -312,7 +317,7 @@ header {
   }
 
   .contacts>li:last-child {
-    margin-bottom: 32px;
+    margin-bottom: 31px;
 
     span {
       font-size: 34px;
@@ -322,7 +327,7 @@ header {
   }
 
   .social-burger {
-    padding-bottom: 36px;
+    padding-bottom: 51px;
     display: block;
 
     >ul:last-child {
@@ -353,7 +358,7 @@ header {
         display: inline-block;
         background-color: transparentize($header-black, 0.8);
         width: 1px;
-        margin: 0 10px;
+        margin: 0 9.5px;
         height: 21px;
       }
     }

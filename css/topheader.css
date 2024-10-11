@@ -5,6 +5,7 @@ header {
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  border: 1px solid #ECECEC;
 }
 
 .header-left {
@@ -241,7 +242,7 @@ header {
     left: -799px;
     background-color: white;
     transition: left 0.5s ease;
-    padding-left: 48px;
+    padding-left: 40px;
     z-index: 2;
   }
   .site-name {
@@ -271,9 +272,9 @@ header {
     align-items: flex-start;
     height: auto;
   }
-  .menu-nav li a {
-    margin-left: 0;
-    padding: 16px 0;
+  .menu-nav li a span {
+    margin-left: 0 !important;
+    padding: 16.5px 0;
     font-size: 40px;
   }
   .menu-nav li a::after {
@@ -283,24 +284,27 @@ header {
     flex-direction: column-reverse;
     padding-left: 0;
   }
+  .contacts svg {
+    display: none;
+  }
   .contacts img {
     display: none;
   }
   .contacts > li:nth-child(2) {
-    margin-bottom: 64px;
+    margin-bottom: 62px;
   }
   .contacts > li:nth-child(2) span {
     font-size: 24px;
   }
   .contacts > li:last-child {
-    margin-bottom: 32px;
+    margin-bottom: 31px;
   }
   .contacts > li:last-child span {
     font-size: 34px;
     color: #2196F3;
   }
   .social-burger {
-    padding-bottom: 36px;
+    padding-bottom: 51px;
     display: block;
   }
   .social-burger > ul:last-child {
@@ -331,7 +335,7 @@ header {
     display: inline-block;
     background-color: rgba(33, 33, 33, 0.2);
     width: 1px;
-    margin: 0 10px;
+    margin: 0 9.5px;
     height: 21px;
   }
 }
