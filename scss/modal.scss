@@ -41,6 +41,11 @@
       border-radius: 50%;
       border: 1px solid #0000001A;
       cursor: pointer;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: $blue;
+      }
 
       svg {
         height: 19px;

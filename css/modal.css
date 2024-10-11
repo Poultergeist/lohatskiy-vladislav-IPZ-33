@@ -44,6 +44,10 @@
   border-radius: 50%;
   border: 1px solid rgba(0, 0, 0, 0.1019607843);
   cursor: pointer;
+  transition: color 0.3s ease;
+}
+.modal__close-btn:hover {
+  color: #2196F3;
 }
 .modal__close-btn svg {
   height: 19px;
