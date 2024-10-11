@@ -87,6 +87,9 @@
   align-items: center;
   position: relative;
 }
+.modal__form_input-input input {
+  margin-left: 8px;
+}
 .modal__form_input-input input,
 .modal__form_input-input textarea {
   border: none;

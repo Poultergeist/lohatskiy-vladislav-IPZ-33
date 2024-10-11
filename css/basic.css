@@ -19,3 +19,7 @@ a {
 button {
   cursor: pointer;
 }
+
+.pt1 {
+  padding-top: 19px !important;
+}
