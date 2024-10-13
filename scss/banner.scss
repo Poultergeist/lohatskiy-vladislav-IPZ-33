@@ -4,18 +4,15 @@
 
 #banner {
   @include flex(row, center, center);
-  max-height: 600px;
-  height: min-content;
-  min-height: 400px;
+  height: 600px;
   width: 100%;
   overflow: hidden;
   background-color: $C4;
   position: relative;
-}
-
-#banner-back {
-  width: 100%;
-  opacity: 0.6;
+  background-image: url('../img/banner.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 #banner-front {
