@@ -6,6 +6,19 @@ header {
   align-items: center;
   justify-content: center;
   border: 1px solid #ECECEC;
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  width: 100%;
+  background-color: white;
+}
+
+.header-place {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 82px;
 }
 
 .header-left {
@@ -202,6 +215,9 @@ header {
 }
 
 @media screen and (max-width: 930px) {
+  .header-place {
+    height: 80px;
+  }
   .contacts {
     display: flex;
     flex-direction: column;
@@ -230,6 +246,9 @@ header {
   }
 }
 @media screen and (max-width: 751px) {
+  .header-place {
+    height: 60px;
+  }
   .burger-content {
     display: flex;
     flex-direction: column;

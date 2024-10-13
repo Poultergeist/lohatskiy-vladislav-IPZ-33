@@ -5,6 +5,16 @@
 header {
   @include flex(row, center, center);
   border: 1px solid #ECECEC;
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  width: 100%;
+  background-color: white;
+}
+
+.header-place {
+  @include flex(row, center, center);
+  height: 82px;
 }
 
 .header-left {
@@ -161,21 +171,21 @@ header {
 
   li {
     cursor: pointer;
-    
+
     svg {
       position: relative;
       transition: color 0.5s linear;
       color: $gray;
       margin-right: 10px;
     }
-    
+
     span {
       font-family: "Roboto", sans-serif;
       font-weight: 500;
       font-size: 14px;
       letter-spacing: 0.02em;
     }
-    
+
     a {
       transition: color 0.5s ease;
       color: $gray;
@@ -189,7 +199,7 @@ header {
   &>:nth-child(2)>svg {
     margin-top: 3px;
   }
-  
+
   >:last-child {
     margin-left: 40px;
 
@@ -210,6 +220,10 @@ header {
 }
 
 @include adaptive(930px) {
+  .header-place {
+    height: 80px;
+  }
+
   .contacts {
     @include flex(column, flex-start, center);
     padding-left: 40px;
@@ -218,6 +232,7 @@ header {
       svg {
         width: 13.5px !important;
       }
+
       span {
         font-size: 12px;
       }
@@ -243,6 +258,10 @@ header {
 }
 
 @include adaptive(751px) {
+  .header-place {
+    height: 60px
+  }
+
   .burger-content {
     @include flex(column, flex-start, space-between);
     position: fixed;
@@ -283,7 +302,7 @@ header {
     align-items: flex-start;
     height: auto;
 
-    li a span{
+    li a span {
       margin-left: 0 !important;
       padding: 16.5px 0;
       font-size: 40px;
@@ -298,7 +317,7 @@ header {
   .contacts {
     flex-direction: column-reverse;
     padding-left: 0;
-    
+
     svg {
       display: none;
     }
