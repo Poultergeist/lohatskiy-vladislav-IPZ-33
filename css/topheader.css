@@ -148,7 +148,7 @@ header {
   border-radius: 2px;
   transition: max-width 0.5s ease;
 }
-.menu-nav li:hover a {
+.menu-nav li:hover a span {
   color: #2196F3;
 }
 .menu-nav li a span:hover::after {
@@ -277,7 +277,7 @@ header {
     padding: 16.5px 0;
     font-size: 40px;
   }
-  .menu-nav li a::after {
+  .menu-nav li a span::after {
     display: none;
   }
   .contacts {
