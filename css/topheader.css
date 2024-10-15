@@ -80,6 +80,9 @@ header {
 #burger-check:checked ~ .burger-content {
   left: 0;
 }
+#burger-check:checked ~ .burger-wrapper {
+  position: fixed;
+}
 
 .burger {
   display: none;

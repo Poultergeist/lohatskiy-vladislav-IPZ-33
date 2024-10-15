@@ -70,6 +70,10 @@ header {
   ~.burger-content {
     left: 0;
   }
+
+  ~.burger-wrapper {
+    position: fixed;
+  }
 }
 
 .burger {
