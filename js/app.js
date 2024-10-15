@@ -5,12 +5,13 @@ const closeModalBtn = document.getElementById('close-modal');
 openModalBtn.addEventListener('click', toggleModal);
 closeModalBtn.addEventListener('click', toggleModal);
 
-function toggleModal() {
+function toggleModal(e) {
   modal.classList.toggle('modal-visible');
 }
 
 const termsBtn = document.getElementById('terms');
 
-termsBtn.addEventListener('click', function() {
+termsBtn.addEventListener('click', function(e) {
+  e.preventDefault();
   this.classList.toggle('terms-agree');
 })

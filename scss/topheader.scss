@@ -5,8 +5,6 @@
 header {
   @include flex(row, center, center);
   border: 1px solid #ECECEC;
-  position: fixed;
-  z-index: 10;
   top: 0;
   width: 100%;
   background-color: white;
