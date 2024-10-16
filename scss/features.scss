@@ -1,0 +1,64 @@
+@import "mixin";
+@import "colors";
+@import "important";
+
+.features {
+  max-width: calc(300px * 4);
+  margin: 0 auto;
+  margin-top: 93px;
+  display: grid;
+  grid-template-columns: repeat(4, 0.25fr);
+  margin-bottom: 63px;
+
+
+  &__item {
+    padding: 0 14px;
+  }
+
+  &__svg {
+    background-color: $ligth-gray;
+    height: 120px;
+    @include flex(row, center, center);
+    border-radius: 5px;
+
+    svg {
+      height: 70px;
+      width: 100%;
+    }
+  }
+
+  &__label {
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 14.5px;
+    margin-top: 31px;
+    margin-left: 1px;
+    letter-spacing: 0.1px;
+  }
+
+  &__desc {
+    font-size: 14.9px;
+    margin-top: 9px;
+    line-height: 1.6;
+    color: $gray;
+  }
+}
+
+@include adaptive(830px) {
+  .features {
+    margin-top: 59px;
+    grid-template-columns: repeat(2, 0.5fr);
+    row-gap: 30px;
+  }
+}
+
+@include adaptive(570px) {
+  .features {
+    grid-template-columns: 1fr;
+    row-gap: 31.5px;
+
+    &__label {
+      text-align: center;
+    }
+  }
+}

@@ -1,0 +1,246 @@
+@import "mixin";
+@import "colors";
+@import "important";
+
+.modal-visible {
+  opacity: 1 !important;
+  pointer-events: all !important;
+}
+
+.modal {
+  width: 100%;
+  height: 100%;
+  background: #00000033;
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  @include flex(row, center, center);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+
+  &__container {
+    width: 528px;
+    height: 581px;
+    background-color: white;
+    box-shadow: 0px 2px 1px 0px #00000033, 0px 1px 3px 0px #0000001F, 0px 1px 1px 0px #00000024;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__close {
+    padding-top: 7px;
+    @include flex(row, center, flex-end);
+
+    &-btn {
+      height: auto;
+      display: flex;
+      margin-right: 8px;
+      padding: 5px;
+      border-radius: 50%;
+      border: 1px solid #0000001A;
+      cursor: pointer;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: $blue;
+      }
+
+      svg {
+        height: 19px;
+        width: 19px;
+      }
+    }
+  }
+
+  &__form {
+    padding: 0 40px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+
+    &-label {
+      text-align: center;
+      font-weight: 600;
+      font-size: 21.15px;
+      padding: 1px 0;
+    }
+
+    &_input {
+      &-comment {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+
+        &>:last-child {
+          flex: 1;
+          padding: 12px 16px;
+        }
+      }
+
+      &-label {
+        font-size: 12px;
+        padding-top: 10.5px;
+        color: $gray;
+      }
+
+      &-input {
+        margin-top: 3px;
+        padding: 10px;
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        position: relative;
+
+        input {
+          margin-left: 8px;
+        }
+
+        input,
+        textarea {
+          border: none;
+          width: 100%;
+          height: 100%;
+          cursor: text;
+          font-size: 12px;
+          resize: none;
+
+          &:focus-visible {
+            outline: none;
+
+            &~svg {
+              color: $blue;
+            }
+
+            &~div {
+              border-color: $blue;
+            }
+          }
+        }
+
+        svg {
+          width: 21px;
+          height: 19px;
+          transition: color 0.3s ease;
+        }
+
+        div {
+          position: absolute;
+          pointer-events: none;
+          width: 100%;
+          height: 100%;
+          border: 1px solid #21212133;
+          left: 0;
+          border-radius: 4px;
+          transition: border-color 0.3s ease;
+        }
+      }
+    }
+
+    &-terms {
+      display: flex;
+      justify-self: flex-start;
+      font-size: 14px;
+      padding: 0 12px;
+      padding-top: 24px;
+      letter-spacing: 0.45px;
+
+      button {
+        margin-right: 8px;
+        width: 16px;
+        height: 16px;
+        letter-spacing: 7px;
+        @include flex(row, center, center);
+        background-color: white;
+        border: 2px solid;
+        border-radius: 2px;
+        transition: all 0.3s ease;
+
+        &.terms-agree {
+          background-color: $blue;
+          border-color: $blue;
+        }
+
+        svg {
+          width: 16px;
+          height: 16px;
+          scale: 1.2;
+        }
+      }
+
+      a {
+        margin-left: 3px;
+        text-decoration: solid underline;
+      }
+    }
+
+    &-send {
+      padding: 34px 123px 40px 123px;
+    }
+
+    &-button {
+      border: none;
+      background-color: $blue;
+      box-shadow: 0px 4px 4px 0px #00000026;
+      border-radius: 4px;
+      height: 50px;
+      width: 100%;
+      color: white;
+      font-size: 18px;
+
+      &:hover {
+        background-color: #188CE8;
+      }
+    }
+  }
+}
+
+
+@include adaptive(870px) {
+  .modal {
+    &__container {
+      width: 450px;
+      height: 609px;
+    }
+
+    &__form {
+      &-label {
+        padding-top: 5px;
+        line-height: 1.4;
+      }
+
+      &_input {
+        &-label {
+          padding-top: 11.6px;
+        }
+
+        textarea, input {
+          font-size: 14px;
+        }
+
+        svg {
+          width: 24px;
+        }
+      }
+
+      &-terms {
+        font-size: 12px;
+        padding: 0;
+        padding-top: 21px;
+        letter-spacing: 0.35px;
+
+        a {
+          margin: 0;
+        }
+      }
+
+      &-send {
+        padding: 28px 85px 40px !important;
+      }
+    }
+  }
+}
+
+// text area = size 14px
+//svg w 24px

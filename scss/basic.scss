@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+  line-height: 1.17;
+  font-family: "Roboto";
+}
+
+.container {
+  max-width: 1170px;
+  padding: 0 15px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+.pt1 {
+  padding-top: 19px !important;
+}

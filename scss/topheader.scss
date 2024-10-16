@@ -1,0 +1,393 @@
+@import "mixin";
+@import "colors";
+@import "important";
+
+header {
+  @include flex(row, center, center);
+  border: 1px solid #ECECEC;
+  top: 0;
+  width: 100%;
+  background-color: white;
+}
+
+.header-place {
+  @include flex(row, center, center);
+  height: 82px;
+}
+
+.header-left {
+  @include flex(row, center, space-between);
+}
+
+.burger-content {
+  @include flex(row, center, space-between);
+  width: 100%;
+}
+
+.header-rigth {
+  @include flex(row, center, space-between);
+  width: 100%;
+  height: 100%;
+}
+
+.header-wrapper {
+  @include flex(row, center, space-between);
+}
+
+#burger-check {
+  display: none;
+}
+
+.burger-wrapper {
+  display: none;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.burger:hover {
+  div {
+    background-color: $blue;
+  }
+}
+
+.social-burger {
+  display: none;
+}
+
+#burger-check:checked {
+  ~.burger-wrapper>.burger>div:nth-child(1) {
+    transform: translate(0px, 7px) rotate(45deg);
+  }
+
+  ~.burger-wrapper>.burger>div:nth-child(2) {
+    opacity: 0;
+  }
+
+  ~.burger-wrapper>.burger>div:nth-child(3) {
+    transform: translate(0, -6px) rotate(-45deg);
+  }
+
+  ~.burger-content {
+    left: 0;
+  }
+
+  ~.burger-wrapper {
+    position: fixed;
+  }
+}
+
+.burger {
+  display: none;
+  z-index: 2;
+  width: 40px;
+  height: 16px;
+  padding: 12px 0;
+
+  div {
+    width: 24px;
+    height: 3px;
+    background-color: $header-black;
+    transition: transform 0.5s ease, opacity 0.5s ease, background-color 0.5s ease;
+  }
+}
+
+.site-name {
+  text-decoration: none;
+  @include flex;
+  padding: 25px 0;
+
+  span {
+    word-spacing: 0;
+    display: block;
+    font-size: 26px;
+    font-weight: 700;
+    font-family: "Raleway", sans-serif;
+
+    letter-spacing: 0.03em;
+    text-align: left;
+    color: $header-black;
+  }
+
+  :first-child {
+    color: $blue;
+  }
+}
+
+.menu-nav {
+  @include flex(row, center, space-evenly);
+  list-style: none;
+  padding-left: 42px;
+  height: 100%;
+
+  li {
+    &:nth-child(2) a span {
+      margin-left: 53px;
+    }
+
+    &:nth-child(3) a span {
+      margin-left: 50px;
+    }
+  }
+
+  li a span {
+    @include flex(column-reverse, center, center);
+    color: $header-black;
+    margin-left: 51px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    position: relative;
+    letter-spacing: 0.02em;
+    transition: color 0.5s ease;
+    cursor: pointer;
+  }
+
+  li a span::after {
+    content: '';
+    position: absolute;
+    top: 45px;
+    display: block;
+    width: 100%;
+    max-width: 0;
+    height: 4px;
+    background-color: $blue;
+    border-radius: 2px;
+    transition: max-width 0.5s ease;
+  }
+
+  li:hover a span {
+    color: $blue;
+  }
+
+  li a span:hover::after {
+    max-width: 100px;
+  }
+}
+
+
+
+.contacts {
+  @include flex(row, center, center);
+  list-style: none;
+  flex-wrap: wrap;
+
+  li {
+    cursor: pointer;
+
+    svg {
+      position: relative;
+      transition: color 0.5s linear;
+      color: $gray;
+      margin-right: 10px;
+    }
+
+    span {
+      font-family: "Roboto", sans-serif;
+      font-weight: 500;
+      font-size: 14px;
+      letter-spacing: 0.02em;
+    }
+
+    a {
+      transition: color 0.5s ease;
+      color: $gray;
+    }
+  }
+
+  &>:not(:first-child) {
+    display: flex;
+  }
+
+  &>:nth-child(2)>svg {
+    margin-top: 3px;
+  }
+
+  >:last-child {
+    margin-left: 40px;
+
+    img {
+      top: 2px;
+    }
+  }
+
+  li:hover {
+    svg {
+      color: $blue;
+    }
+
+    a {
+      color: $blue;
+    }
+  }
+}
+
+@include adaptive(930px) {
+  .header-place {
+    height: 80px;
+  }
+
+  .contacts {
+    @include flex(column, flex-start, center);
+    padding-left: 40px;
+
+    li {
+      svg {
+        width: 13.5px !important;
+      }
+
+      span {
+        font-size: 12px;
+      }
+    }
+
+    >:last-child {
+      margin-left: 0;
+      margin-top: 5px;
+    }
+  }
+
+  .site-name {
+    padding: 25.5px 0;
+
+    &>span {
+      font-size: 24.1px;
+    }
+  }
+
+  .menu-nav {
+    padding-left: 35px;
+  }
+}
+
+@include adaptive(751px) {
+  .header-place {
+    height: 60px
+  }
+
+  .burger-content {
+    @include flex(column, flex-start, space-between);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: -799px;
+    background-color: white;
+    transition: left 0.5s ease;
+    padding-left: 40px;
+    z-index: 2;
+  }
+
+  .site-name {
+    padding: 15px 0;
+
+    span {
+      font-size: 24px;
+
+    }
+  }
+
+  .burger-wrapper {
+    @include flex(row, center, space-between);
+  }
+
+  .burger {
+    @include flex(column, center, space-between);
+  }
+
+  .header-rigth {
+    justify-content: flex-end;
+  }
+
+  .menu-nav {
+    padding: 32px 0;
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+
+    li a span {
+      margin-left: 0 !important;
+      padding: 16.5px 0;
+      font-size: 40px;
+
+
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+  .contacts {
+    flex-direction: column-reverse;
+    padding-left: 0;
+
+    svg {
+      display: none;
+    }
+
+    img {
+      display: none;
+    }
+  }
+
+  .contacts>li:nth-child(2) {
+    margin-bottom: 62px;
+
+    span {
+      font-size: 24px;
+    }
+  }
+
+  .contacts>li:last-child {
+    margin-bottom: 31px;
+
+    span {
+      font-size: 34px;
+
+      color: $blue;
+    }
+  }
+
+  .social-burger {
+    padding-bottom: 51px;
+    display: block;
+
+    >ul:last-child {
+      margin-right: 48px;
+    }
+
+    >ul {
+      @include flex(row, center, flex-start);
+      flex-wrap: wrap;
+      list-style: none;
+
+      >li {
+        display: flex;
+
+        >a {
+          font-family: "Roboto", sans-serif;
+          font-weight: 500;
+          font-size: 18px;
+          line-height: 1.2;
+          letter-spacing: 0.02em;
+          text-decoration: none;
+          color: $blue;
+        }
+      }
+
+      >li:not(:last-child)::after {
+        content: '';
+        display: inline-block;
+        background-color: transparentize($header-black, 0.8);
+        width: 1px;
+        margin: 0 9.5px;
+        height: 21px;
+      }
+    }
+  }
+}
+
+@include adaptive(350px) {
+  .contacts>li:last-child span {
+    font-size: 30px;
+  }
+}

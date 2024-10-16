@@ -1,0 +1,81 @@
+@import "mixin";
+@import "colors";
+@import "important";
+
+#banner {
+  @include flex(row, center, center);
+  height: 600px;
+  width: 100%;
+  overflow: hidden;
+  background-color: $C4;
+  position: relative;
+  background-image: url('../img/banner.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#banner-front {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  @include flex(column, center, center);
+
+  span {
+    color: white;
+    font-family: 'Roboto';
+    font-weight: 900;
+    font-size: 44px;
+    line-height: 60px;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 0.5px;
+    letter-spacing: 2.7px;
+  }
+
+  button {
+    color: white;
+    border: none;
+    background-color: $blue;
+    font-family: 'Roboto';
+    padding: 16px 24px;
+    margin-top: 29px;
+    border-radius: 5px;
+    letter-spacing: 0.9px;
+    font-weight: 500;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    box-shadow: 0px 4px 4px 0px #00000026;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #188CE8;
+    }
+  }
+}
+
+@include adaptive(922px) {
+  #banner-back {
+    width: 100%;
+    height: auto;
+  }
+
+  #banner {
+    height: 400px;
+  }
+
+  #banner-front {
+    span {
+      font-size: 24.1px;
+      line-height: 42px;
+      margin-top: 2px;
+    }
+  }
+}
+
+@include adaptive(622px) {
+  #banner-back {
+    width: auto;
+    height: 100%;
+  }
+}

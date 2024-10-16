@@ -1,0 +1,51 @@
+@import "mixin";
+@import "colors";
+@import "important";
+
+.what {
+  padding-top: 29px;
+  padding-bottom: 95px;
+
+  &__label {
+    text-align: center;
+    font-size: 37.8px;
+    font-weight: 600;
+  }
+
+  &__items-container {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    column-gap: 30px;
+    padding-top: 50px;
+  }
+
+  &__item {
+    overflow: hidden;
+    position: relative;
+    height: 294px;
+
+    img {
+      height: 100%;
+      position: absolute;
+      right: -10%;
+    }
+
+    &_label {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      background-color: #2F303ACC;
+      color: white;
+      text-transform: uppercase;
+      padding: 26.5px 0;
+      text-align: center;
+      font-size: 14.8px;
+    }
+  }
+}
+
+@include adaptive(1200px) {
+  .what {
+    display: none;
+  }
+}

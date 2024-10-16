@@ -1,0 +1,135 @@
+@import "mixin";
+@import "colors";
+@import "important";
+
+.team {
+  background-color: $ligth-gray;
+  padding-top: 91px;
+  padding-bottom: 94px;
+
+  .container {
+    width: auto;
+  }
+
+  &__label {
+    font-size: 38px;
+    text-align: center;
+    font-weight: 600;
+  }
+
+  &__members {
+    margin-top: 48px;
+    display: grid;
+    grid-template-columns: repeat(4, 0.25fr);
+    column-gap: 30px;
+  }
+
+  &__member {
+    max-width: 270px;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0px 2px 1px 0px #00000033;
+    box-shadow: 0px 1px 1px 0px #00000024;
+    box-shadow: 0px 1px 3px 0px #0000001F;
+    border-radius: 4px;
+
+    &_profile-photo-container {
+      display: flex;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    &_name,
+    &_position {
+      text-align: center;
+      font-size: 17px;
+    }
+
+    &_name {
+      font-weight: 600;
+      padding-top: 31.1px;
+    }
+
+    &_position {
+      padding-top: 9px;
+    }
+
+    &_social {
+      @include flex(row, center, space-between);
+      font-size: 23px;
+      padding: 15px 32px 30px 32px;
+
+      a {
+        @include flex(row, center, center);
+        width: 44px;
+        height: 44px;
+        color: #afb1b8;
+        border-radius: 50%;
+        transition: background-color 0.3s ease, color 0.3s ease;
+
+        &:hover {
+          background-color: $blue;
+          color: white;
+        }
+      }
+    }
+  }
+}
+
+@include adaptive(1090px) {
+  .team {
+    padding-top: 59px;
+    padding-bottom: 60px;
+
+    &__label {
+      font-size: 29px;
+    }
+
+    &__members {
+      grid-template-columns: repeat(2, 0.5fr);
+      justify-items: center;
+      margin-top: 30px;
+      row-gap: 30px;
+    }
+
+    &__member {
+      max-width: none;
+
+      &_profile-photo-container {
+        aspect-ratio: 1/1.053;
+        overflow: hidden;
+        justify-content: center;
+
+        img {
+          width: 110%;
+          height: 100%;
+        }
+      }
+
+      &_social {
+        padding: 13.9px 21% 24.8px 21%
+      }
+    }
+  }
+}
+
+@include adaptive(674px) {
+  .team {
+    &__members {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    &__member {
+      &_profile-photo-container {
+        aspect-ratio: 1/1.02;
+      }
+
+      &_social {
+        padding: 13.9px 27% 24.8px 27%;
+      }
+    }
+  }
+}
